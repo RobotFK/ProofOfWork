@@ -1,0 +1,122 @@
+0.6
+-Start of Changelog
+0.7
+-Changed Sort in View_Anliegen to be by ID ASC
+-Now adding new Eingang Documents actually checks if Bv is not Default
+-Exiting Eingang_Edit via Formbutton no longer Opens a different Form
+-Entering Eingang_Edit and Ausgang_Edit now occurs in acFormEdit and gets the Bv Number by the Open_Arg
+-Autoopen now only fires on opening Eingang_Edit if there are 0 records with a matching BvNumber
+-DB Recompiled
+-Removed Changing the Cycle Propety of Anliegen_new in vba as this caused Acess to crash
+0.7.1
+-DB now only Accepts BvNumbern of len[8-9]
+-Creation of Too long or short BvNumber generates a Custom Error box
+0.7.2
+-Reverten DB BvNumber Check
+-Added New BvNumber check on Update that requires min lenght and value to en in Current year
+0.7.3
+-Changed BvNumber check to replace the last 4 Digits if lenght is otherwise fine
+0.7.4
+-hanged Sort in View_Anliegen to be by ID Desc
+-If BvNumber is less than 6 Digits it gets the Date added to the end
+0.7.5
+-Light Changes To saving in New Anliegen by Schötz
+0.8.0
+-Added Check for Too high Bv prefix
+-Automatic Removal of Leading 0's in BvNumber
+-Slight Comment Improvements
+0.8.1
+-Added Pw "admin66" to acess Settings
+-Cleaning Eingang and Ausgang now also removes Entries where no matching BvNumber is found (This is by design very volatile)
+0.8.2
+-Fixed Collision on Repairing eingang/Ausgang
+-Fixed Wrong evaluation on Choices on Repairing eingang/Ausgang
+0.9.0
+-Small improvement to the Comments of New Anliegen
+-Added Internal documentation to debugging the Neues Anliegen Button in Anliegen_view_qry
+-Anliegen_new now attempts to delete its record if it not Exited by Saving 
+0.9.1
+-Fixed Grammar the User asked for and Renamed some Descriptors
+-Added the Requested Rows to Anliegen_view_qry
+0.10
+-Wip new Filter for Abteilung by a new popupform
+-Changed Listoptions for Field'Art' in main DB
+-Reimplremented Coloring of Gesendet and Freigabe in Anliegen_view_qry based on G05/F05 information
+0.10.1
+-Added HTML export
+0.10.2
+-Moved HTML export to Anliegen_view_qry
+-Changed HTML export to ask for overriding file
+-Added Fastprint
+-Rearanged Anliegen_edit slightly
+-Closing Anliegen_edit now refreshes Anliegen_view_qry if it is open
+0.11.0
+-Changed Name of Id=4 Erfasser
+-Now BvNumber checks can all happen sequentially instead of aborting after the first fail
+-Home button on Anliegen_new now asks for confimration
+-Added new Erfasser
+-Verantworltiche Abteilung now offers standard options
+- 0's now get truncated Sucsesfully
+0.11.0
+-Anliegen_qry now sorts by bv lenght and value 
+0.11.1
+-Undocumented Version changes
+0.11.2
+-Anliegen_new Form_close now catches empty BV's and stops generating invalid Sql Queries (By just ignoring the errors and skipping the lines )
+-Removed edit on Verantworltiche Abteilung in Anliegen_new
+-Removed old Anliegen_new error Handeling
+-Disabled 0prefix snipe on Bv handeling in Anliegen_new
+0.11.3 
+-Added Counter to Unlocking records
+0.12.0
+-Implemented Export and Preview of Pdf
+0.12.1
+- "InBearbeitung" -> "In Bearbeitung" and all required Changes
+- Renamed all description of Pdf preview
+0.13.0 (Internal)
+-New coloring Rules in Anliegen_view_qry, based on Erledigt
+-Editing Erledigt now offer changes in F05 and G05 based on Their progress
+-Fixed Anliegen_new Tabulator movement skipping Bemerkung
+-Removed requirement for BvNumber to end in Current year
+-Disabled Delete Button on the Blank record for Eingang_Edit and Ausgang_Edit
+-The Filter System has been overhauled, it now uses a Pearl Dictionairy and a button to assemble it
+-Added Filechecks for Eingang_Edit and Ausgang_Edit
+
+0.14.0
+-Filter Adjustment
+-Fristcoloring now also depent on Erledigt and is a Full Statement
+-PDF print and Print now takes the Filterargument sucseeflullty aswell
+-PDF print now Complains about errors without being seen by the User
+-After Creating a new Record Anliegen_view_qry now Jumps to it
+0.15.0
+-DoCmd.Close now Never refeers to a Static Name where it isn't absolutly nessecary
+-Reworked the Filter system again
+-Opening Anliegen_edit now closes Anliegen_view_qry
+-Eingang_Edit and Ausgang now Uses a function Centrally to add Files
+-Restricted Filepath to be starting with "R:\themen\BV_Anfragen\" 
+0.15.1
+-Abteilungs Filter now is searching for Likeness instead of exact matches
+-Fixed Spelling error
+-Adjusted Layout of the Filter Popups
+0.15.2
+-Removed Old Forms and Codesegments
+-Renamed:
+Ausgang_edit_qry -> Ausgang_qry
+Eingang_edit_qry -> Eingang_qry
+Anliegen_print_qry -> Anliegen_print_pdf_qry
+0.15.3
+-Improved Msgbox for Changing to Erledigt(True) on Anliegen_edit
+-Added some rs.close to (maybe) aid against memory leaks
+-Adjusted Layout of the Filter Popups again
+-Given All elements Handmade names
+-Changed All red X to return symbols
+0.16
+-The Dev version Of the Database now uses its own backend instead of production (finally)
+-Removed Print and Quickprint
+-Removed Anliegen_print_qry
+-Removed The old Checkmark for Erledgit in Anliegen_view_qry
+-Renamed Verantwortliche Abt silghtly
+-Removed Anliegen_print_pdf_qry Collum Erfasser
+-Anliegen_print_pdf_qry Frist now Leftbound
+-Added Anliegen_edit_Thema
+-Anliegen_edit_Thema and Anliegen_edit_bemerkung now have a slightly more fitting Title
