@@ -9,7 +9,9 @@ background-color: #BABABA;
 body {
   text-align: center;
 }
-
+table, th, td {
+  border: 1px solid black;
+}
 details {
   border: 1px solid #111;
   border-radius: 10px;
@@ -21,14 +23,21 @@ details {
 <body onload="bodyload()">
 <div class="padding"></div>
 
-<div class="headbar"><div id="Money"></div>This is the Top</div>
-
-<div id="Center">
+<div class="headbar">
+<div id="Money"></div>
+<table id="Shop">
+<tr>
+	<td><button onclick="place_selection(0)">Clear</button>
+	<td><button onclick="place_selection(1)">Generator 1</button>
+</tr>
+</table>
+</div>
+<div id="Center" style="padding-left: 1%;">
 	<table id="field">
 	</table>
 </div>
 
-<div id="bottom"> This is the Bottom</div>
+<div id="bottom"><div id="Selection_info"></div> This is the Bottom</div>
 
 <div class="padding"></div>
 </body>
